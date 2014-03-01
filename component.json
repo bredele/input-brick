@@ -4,8 +4,12 @@
   "description": "Lego plugin to set model value on input",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
-  "development": {},
+  "dependencies": {
+    "bredele/event": "*"
+  },
+  "development": {
+    "bredele/lego" : "*"
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": [
