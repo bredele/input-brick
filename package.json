@@ -1,0 +1,25 @@
+{
+  "name": "input-brick",
+  "version": "0.0.1",
+  "description": "Lego plugin to set model value on input",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bredele/input-brick.git"
+  },
+  "keywords": [
+    "lego",
+    "brick",
+    "mvvm",
+    "model",
+    "input"
+  ],
+  "author": "Olivier Wietrich <olivier.wietrich@gmail.com> (http://github.com/bredele)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bredele/input-brick/issues"
+  }
+}

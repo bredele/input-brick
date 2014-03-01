@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Input brick</title>
+</head>
+<body>
+	<input type="text" model="name">
+	<span>{{name}}</span>
+	<script src="../build/build.js"></script>
+	<script>
+	  var lego = require('lego');
+
+	  lego(document.body)
+	    .add('model', require('input-brick'))
+	    .build();
+	</script>
+</body>
+</html>
