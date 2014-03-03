@@ -1,7 +1,7 @@
 {
   "name": "input-brick",
   "version": "0.0.1",
-  "description": "Lego plugin to set model value on input",
+  "description": "Brick plugin to set model value on input",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,6 @@
     "url": "git://github.com/bredele/input-brick.git"
   },
   "keywords": [
-    "lego",
     "brick",
     "mvvm",
     "model",
@@ -29,6 +28,6 @@
     "event-bredele": "0.0.1"
   },
   "devDependencies": {
-    "lego": "0.0.0"
+    "brick": "0.0.0"
   }
 }

@@ -1,6 +1,6 @@
 # input-brick
 
-  [Lego](https://github.com/bredele/lego) plugin to set model values on input.
+  [Brick](https://github.com/bredele/brick) plugin to set model values on input.
   
 ## Installation
 
@@ -14,7 +14,7 @@ with [nodejs](http://nodejs.org):
 
 ## Usage
 
-First, add the plugin to your view (see [lego](https://github.com/bredele/lego) to know more about views):
+First, add the plugin to your view (see [brick](https://github.com/bredele/brick) to know more about views):
 
 ```js
 view.add('model', require('input-brick'));
