@@ -5,15 +5,32 @@
 	<title>Input brick</title>
 </head>
 <body>
-	<input type="text" name="github">
+	<input class="input1" type="text" name="github">
+	<input class="input2" type="text">
+	<input class="input3" type="text" name="country">
+
 	<script src="../build/build.js"></script>
 	<script>
 	  var wired = require('wired');
-	  var el = document.querySelector('input');
+	  var input1 = document.querySelector('.input1');
+	  var input2 = document.querySelector('.input2');
+	  var input3 = document.querySelector('.input3');
 
-	  var live = wired(el);
-	  live.on('change github', function(str) {
-	  	console.log(str);
+	  var live1 = wired(input1);
+	  live1.on('change github', function(str) {
+	  	console.log('github:', str);
+	  });
+
+	  var live2 = wired(input2, 'other');
+	  live2.on('change other', function(str) {
+	  	console.log('other:', str);
+	  });
+
+	  var live3 = wired(input3, 'bis', {
+	  	bis: 'initial value'
+	  });
+	  live3.on('change bis', function(str) {
+	  	console.log('bis:', str);
 	  });
 	  //wired(el, 'label')
 	  //wired(el, 'label', data);

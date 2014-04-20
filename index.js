@@ -8,8 +8,13 @@ var Store = require('datastore');
 module.exports = wired;
 
 
+
 function wired(node, name, data) {
 	var store = new Store(data);
+	if(typeof name === 'object') {
+		data = name;
+		name = undefined;
+	}
 	var change = function(target) {
 		name = name || target.getAttribute('name');
 		store.set(name, target.value);
