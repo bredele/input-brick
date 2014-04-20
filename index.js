@@ -1,20 +1,20 @@
-var ev = require('event');
+var events = require('sewer');
 
 /**
  * Expose 'input-brick'
  */
 
-module.exports = model;
+module.exports = wired;
 
-function model(node, expr) {
-	var view = this;
-	ev(node, 'input', function(node) {
-		view.set(expr, node.value);
-	});
-};
+function wired(node, data) {
+
+}
 
 
-//WE should destroy the listener
-// model.destroy = function() {
-
+// function model(node, expr) {
+// 	var view = this;
+// 	ev(node, 'input', function(node) {
+// 		view.set(expr, node.value);
+// 	});
 // };
+
