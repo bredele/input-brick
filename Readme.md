@@ -31,7 +31,7 @@ live.on('change label', function() {
 });
 ```
 
-  you can also choose wich store attribute will be updated on input:
+  you can also choose which store attribute will be updated on input:
 
 ```js
 var live = wired(input, 'name');

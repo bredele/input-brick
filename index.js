@@ -53,6 +53,10 @@ function wired(node, name, data) {
 
 	var value = store.get(name);
 	if(value) node.value = value;
+ 
+  // if(name) store.on('change ' + name, function(str) {
+  // 	node.value = str;
+  // });
 
   //NOTE: if we set value in store, input value should be updated
 	return store;
