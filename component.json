@@ -1,14 +1,14 @@
 {
-  "name": "input-brick",
-  "repo": "bredele/input-brick",
+  "name": "wired",
+  "repo": "bredele/wired",
   "description": "Brick plugin to set model value on input",
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "bredele/event": "*"
+    "bredele/sewer": "~0.1.1"
   },
   "development": {
-    "bredele/brick" : "*"
+    "bredele/brickjs": "~0.3.3"
   },
   "license": "MIT",
   "main": "index.js",

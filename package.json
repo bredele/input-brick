@@ -1,5 +1,5 @@
 {
-  "name": "input-brick",
+  "name": "wired",
   "version": "0.0.1",
   "description": "Brick plugin to set model value on input",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bredele/input-brick.git"
+    "url": "git://github.com/bredele/wired.git"
   },
   "keywords": [
     "brick",
@@ -19,15 +19,12 @@
   "author": "Olivier Wietrich <olivier.wietrich@gmail.com> (http://github.com/bredele)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bredele/input-brick/issues"
-  },
-  "browser": {
-    "event": "event-bredele"
+    "url": "https://github.com/bredele/wired/issues"
   },
   "dependencies": {
-    "event-bredele": "0.0.1"
+    "sewer": "^0.1.1"
   },
   "devDependencies": {
-    "brick": "0.0.0"
+    "brickjs": "^0.3.3"
   }
 }
