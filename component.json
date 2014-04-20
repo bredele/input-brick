@@ -2,7 +2,7 @@
   "name": "wired",
   "repo": "bredele/wired",
   "description": "Brick plugin to set model value on input",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "keywords": [],
   "dependencies": {
     "bredele/sewer": "~0.1.1",
