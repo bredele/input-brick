@@ -24,6 +24,8 @@ with [browserify](http://browserify.org):
 
 ```js
 var live = wired(input);
+
+// bind with name attribute by default
 live.on('change label', function() {
   // do something
 });
