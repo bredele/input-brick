@@ -26,6 +26,11 @@
 	  	console.log('other:', str);
 	  });
 
+	  var idx = 0;
+	  setInterval(function() {
+	  	live2.set('other', 'hello world:' + idx++ );
+	  }, 1000);
+
 	  var live3 = wired(input3, 'bis', {
 	  	bis: 'initial value'
 	  });

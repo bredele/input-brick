@@ -35,30 +35,30 @@ module.exports = wired;
  */
 
 function wired(node, name, data) {
+  var store = new Store(data);
+  if(typeof name === 'object') {
+    data = name;
+    name = undefined;
+  }
+  var change = function(target) {
+    name = name || target.getAttribute('name');
+    store.set(name, target.value, true);
+  };
 
-	var store = new Store(data);
-	if(typeof name === 'object') {
-		data = name;
-		name = undefined;
-	}
-	var change = function(target) {
-		name = name || target.getAttribute('name');
-		store.set(name, target.value);
-	};
+  //NOTE: sewer should allow change & keydown & keyup
+  events.attach(node, 'change', change);
+  events.attach(node, 'keydown', change);
+  events.attach(node, 'keyup', change);
 
-	//NOTE: sewer should allow change & keydown & keyup
-	events.attach(node, 'change', change);
-	events.attach(node, 'keydown', change);
-	events.attach(node, 'keyup', change);
-
-	var value = store.get(name);
-	if(value) node.value = value;
+  var value = store.get(name);
+  if(value) node.value = value;
  
-  // if(name) store.on('change ' + name, function(str) {
-  // 	node.value = str;
-  // });
+  // NOTE: could be optimized with event updated name
+  if(name) store.on('updated', function(key, value) {
+    if(key === name) node.value = value;
+  });
 
   //NOTE: if we set value in store, input value should be updated
-	return store;
+  return store;
 }
 

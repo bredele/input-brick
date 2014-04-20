@@ -5,15 +5,30 @@
 	<title>Input brick</title>
 </head>
 <body>
-	<input type="text" model="name">
-	<span>{{name}}</span>
+	<input type="text" name="label">
+	<input type="text" binder="other">
+	<br>
+	<span>label: {{ label }}</span>
+	<br>
+	<span>other: {{ other }}</span>
 	<script src="../build/build.js"></script>
 	<script>
-	  var brick = require('brick');
+	  var brick = require('brickjs');
+	  var wired = require('wired');
 
-	  brick(document.body)
-	    .add('model', require('input-brick'))
+	  var view = brick(document.body)
+	    .add({
+	    	'name': wired,
+	    	'binder': wired
+	    })
 	    .build();
+
+	  view.on('change', function(key, value) {
+	  	console.log(key, value);
+	  });
+
+	  view.set('label', 'hello');
+	  view.set('other', 'world');
 	</script>
 </body>
 </html>
