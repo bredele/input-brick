@@ -1,42 +1,68 @@
-# input-brick
+# wired
 
-  [Brick](https://github.com/bredele/brick) plugin to set model values on input.
+  Double way node element binding.
+
+  Wired is a standalong library that works with **[brick](http://github.com/bredele/brickjs)** and **[wall](http://github.com/bredele/wall)** as well.
   
 ## Installation
 
 with [component](http://github.com/component/component):
 
-    $ component install bredele/input-brick
+    $ component install bredele/wired
 
-with [nodejs](http://nodejs.org):
+with [browserify](http://browserify.org):
 
-    $ component install input-brick
+    $ component install wired
 
-## Usage
-
-First, add the plugin to your view (see [brick](https://github.com/bredele/brick) to know more about views):
-
-```js
-view.add('model', require('input-brick'));
-```
-
-## Basic
-
+## Standalone
 
 ```html
-<input type="text" model="name">
+<input type="text" name="label">
 ```
 
-  Set `name` (```view.get('name')```) on input.
+  wired takes at least a node element and return a **[store](http://github.com/bredele/datastore)**:
 
-see [live example](https://github.com/bredele/input-brick/tree/master/example)
+```js
+var live = wired(input);
+live.on('change label', function() {
+  // do something
+});
+```
 
+  you can also choose wich store attribute will be updated on input:
+
+```js
+var live = wired(input, 'name');
+live.on('change name', function() {
+  // do something
+});
+```
+
+ or inverse the control over your data (plain javascript object or [store](http://github.com/bredele/datastore)):
+
+```js
+var store = new Store({
+  city: 'calgary'
+});
+
+wired(input, 'city', store);
+
+input.value;
+// => calgary
+
+store.on('change city', function() {
+  // do something
+});
+```
+<!--  
+## Brick
+## Wal -->
 
 ## License
 
   The MIT License (MIT)
 
-  Copyright (c) 2014 <copyright holders>
+  Copyright (c) 2014 <olivier.wietrich@gmail.com> Olivier Wietrich
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal

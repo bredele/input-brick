@@ -45,7 +45,8 @@ function wired(node, name, data) {
 		name = name || target.getAttribute('name');
 		store.set(name, target.value);
 	};
-	//NOTE: sewer should allow change | keydown | keyup
+
+	//NOTE: sewer should allow change & keydown & keyup
 	events.attach(node, 'change', change);
 	events.attach(node, 'keydown', change);
 	events.attach(node, 'keyup', change);
@@ -53,6 +54,7 @@ function wired(node, name, data) {
 	var value = store.get(name);
 	if(value) node.value = value;
 
+  //NOTE: if we set value in store, input value should be updated
 	return store;
 }
 
