@@ -5,13 +5,18 @@
 	<title>Input brick</title>
 </head>
 <body>
-	<input type="text">
+	<input type="text" name="github">
 	<script src="../build/build.js"></script>
 	<script>
 	  var wired = require('wired');
 	  var el = document.querySelector('input');
 
-	  var live = wired(el, data);
+	  var live = wired(el);
+	  live.on('change github', function(str) {
+	  	console.log(str);
+	  });
+	  //wired(el, 'label')
+	  //wired(el, 'label', data);
 	</script>
 </body>
 </html>

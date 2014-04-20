@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "sewer": "^0.1.1",
-    "datastore": "^1.0.2"
+    "datastore": "^1.0.2",
+    "deus": "^0.2.0"
   },
   "devDependencies": {
     "brickjs": "^0.3.3"

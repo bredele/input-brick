@@ -1,4 +1,5 @@
 var events = require('sewer');
+var Store = require('datastore');
 
 /**
  * Expose 'input-brick'
@@ -6,8 +7,18 @@ var events = require('sewer');
 
 module.exports = wired;
 
-function wired(node, data) {
 
+function wired(node, name, data) {
+	var store = new Store(data);
+	var change = function(target) {
+		name = name || target.getAttribute('name');
+		store.set(name, target.value);
+	};
+	//NOTE: sewer should allow change | keydown | keyup
+	events.attach(node, 'change', change);
+	events.attach(node, 'keydown', change);
+	events.attach(node, 'keyup', change);
+	return store;
 }
 
 
